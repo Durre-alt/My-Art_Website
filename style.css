@@ -1,0 +1,772 @@
+/* =====================================
+   1. GENERAL STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cream: #f8f3eb;
+    --light-beige: #eee3d3;
+    --brown: #78543d;
+    --dark-brown: #38271f;
+    --soft-brown: #a47c62;
+    --white: #ffffff;
+    --text: #51443c;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    scroll-padding-top: 100px;
+}
+
+section,
+article {
+    scroll-margin-top: 100px;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 5%;
+    background-color: rgba(248, 243, 235, 0.97);
+    box-shadow: 0 3px 15px rgba(56, 39, 31, 0.08);
+}
+
+.logo,
+.footer-logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--dark-brown);
+    letter-spacing: 1px;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--soft-brown);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.nav-links a {
+    padding: 6px 9px;
+    color: var(--dark-brown);
+    font-size: 13px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    position: relative;
+    min-height: 570px;
+    padding: 160px 7% 80px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background: linear-gradient(
+        120deg,
+        #f8f3eb,
+        #eee0cd,
+        #dfc5ad
+    );
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag,
+.section-tag {
+    color: var(--soft-brown);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.12;
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background-color: var(--dark-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(56, 39, 31, 0.2);
+}
+
+.hero-badge {
+    position: absolute;
+    right: 7%;
+    top: 35%;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--brown);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3;
+    transform: rotate(10deg);
+    box-shadow: 0 8px 20px rgba(56, 39, 31, 0.2);
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+    font-family: Georgia, serif;
+    font-size: clamp(80px, 15vw, 180px);
+    font-weight: bold;
+    color: rgba(120, 84, 61, 0.08);
+    pointer-events: none;
+}
+
+
+/* =====================================
+   4. MAIN LAYOUT
+===================================== */
+
+.main-layout {
+    width: 90%;
+    max-width: 1400px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+
+/* =====================================
+   5. SIDEBAR
+===================================== */
+
+.sidebar {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(56, 39, 31, 0.07);
+}
+
+.sidebar h2 {
+    font-family: Georgia, serif;
+    color: var(--dark-brown);
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.sidebar-description {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.sidebar h3 {
+    color: var(--brown);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.sidebar-links {
+    list-style: none;
+}
+
+.sidebar-links li {
+    border-bottom: 1px solid #eee5dc;
+}
+
+.sidebar-links a {
+    display: block;
+    padding: 9px 5px;
+    color: var(--text);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sidebar-links a:hover {
+    color: var(--brown);
+    padding-left: 12px;
+    background-color: var(--cream);
+}
+
+.sidebar-button {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 10px 16px;
+    background-color: var(--light-beige);
+    color: var(--dark-brown);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sidebar-button:hover {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+
+/* =====================================
+   6. SECTION HEADINGS
+===================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--dark-brown);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   7. PAINTING CARDS
+===================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.art-card {
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(56, 39, 31, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.art-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(56, 39, 31, 0.16);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--light-beige);
+}
+
+.image-container img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.art-card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.new-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: var(--dark-brown);
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    color: var(--brown);
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card-button:hover {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+
+/* =====================================
+   8. GALLERY SECTION
+===================================== */
+
+.gallery-section {
+    padding: 70px 5%;
+    background-color: var(--light-beige);
+}
+
+.gallery-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =====================================
+   9. ABOUT SECTION
+===================================== */
+
+.about-section {
+    padding: 80px 8%;
+    background-color: var(--cream);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content > p:not(.section-tag) {
+    margin-bottom: 18px;
+}
+
+.about-content .hero-button {
+    margin-top: 10px;
+}
+
+
+/* =====================================
+   10. FOOTER
+===================================== */
+
+.footer {
+    padding: 55px 7% 20px;
+    background-color: var(--dark-brown);
+    color: #eee3d3;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 1300px;
+    margin: 0 auto 35px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-logo span {
+    color: #d5ad8f;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.footer-column > a:not(.footer-logo) {
+    display: block;
+    width: fit-content;
+    color: #eee3d3;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #d5ad8f;
+    padding-left: 4px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-links a {
+    color: #eee3d3;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #d5ad8f;
+}
+
+.copyright {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* =====================================
+   11. TABLET RESPONSIVE DESIGN
+   Screens 768px and wider
+===================================== */
+
+@media (min-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        padding-top: 150px;
+        min-height: 600px;
+    }
+
+    .hero-badge {
+        width: 110px;
+        height: 110px;
+    }
+
+    .main-layout {
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 100px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .gallery-item img {
+        height: 190px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+
+
+/* =====================================
+   12. DESKTOP RESPONSIVE DESIGN
+   Screens 992px and wider
+===================================== */
+
+@media (min-width: 992px) {
+
+    .main-layout {
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .image-container img {
+        height: 230px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+    .hero {
+        padding-left: 10%;
+    }
+}
+
+
+/* =====================================
+   13. EXTRA SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        gap: 2px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero-badge {
+        width: 65px;
+        height: 65px;
+        font-size: 10px;
+        right: 4%;
+        top: 30%;
+    }
+
+    .main-layout {
+        width: 94%;
+    }
+
+    .gallery-grid {
+        gap: 8px;
+    }
+
+    .gallery-item img {
+        height: 115px;
+    }
+}
+
+
+/* =====================================
+   14. CSS TARGET IMAGE POPUP
+===================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Open popup using target pseudo-class */
+
+.lightbox:target {
+    display: flex;
+}
+
+/* Enlarged image */
+
+.lightbox-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+}
+
+.lightbox-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+/* Close button */
+
+.close-popup {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 3;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.close-popup:hover {
+    color: #d5ad8f;
+}
+
+/* Responsive popup for mobile screens */
+
+@media (max-width: 480px) {
+
+    .close-popup {
+        top: 15px;
+        right: 20px;
+        font-size: 36px;
+    }
+
+    .lightbox {
+        padding: 12px;
+    }
+
+    .lightbox-image,
+    .lightbox-image img {
+        max-width: 96%;
+        max-height: 80vh;
+    }
+}
